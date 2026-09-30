@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a reproducible issue without sharing sensitive network data.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened and what did you expect?
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform / OS release
+      placeholder: "Example: IOS XE 17.x (lab)"
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Redact credentials, public IPs and customer data.
+    validations:
+      required: true
