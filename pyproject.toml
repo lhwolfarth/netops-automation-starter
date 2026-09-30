@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netops-automation-starter"
+version = "0.2.0"
+description = "Free network automation starter workflows for engineers"
+requires-python = ">=3.10"
+dependencies = ["netmiko>=4.4,<5", "PyYAML>=6,<7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "ruff>=0.6,<1"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["netops_kit*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
