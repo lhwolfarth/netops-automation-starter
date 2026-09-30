@@ -1,0 +1,27 @@
+# Never store production passwords in this file.
+# Export NETOPS_USERNAME and NETOPS_PASSWORD before running.
+defaults:
+  username: env:NETOPS_USERNAME
+  password: env:NETOPS_PASSWORD
+  port: 22
+  timeout: 15
+  read_timeout: 60
+  fast_cli: true
+  # Set true after populating known_hosts in production.
+  ssh_strict: false
+
+devices:
+  - name: core-sw-01
+    host: 192.0.2.11
+    device_type: cisco_ios
+    platform: cisco_ios
+
+  - name: edge-rtr-01
+    host: 192.0.2.21
+    device_type: juniper_junos
+    platform: juniper_junos
+
+  - name: dc-leaf-01
+    host: 192.0.2.31
+    device_type: arista_eos
+    platform: arista_eos
